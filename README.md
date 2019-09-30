@@ -1,5 +1,6 @@
 # Qt-snake-game-CPP
 Qt实现贪吃蛇_CPP
+打包好的Windows下exe文件 在 https://github.com/Ikaros-521/my_exe
 
 Qt Creator Documentation 2.4.1
 
