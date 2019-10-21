@@ -9,3 +9,21 @@ Qt Creator Documentation 2.4.1
 龙卷风版 速度极快，碰壁就死，不会加长。
 
 简单版  速度不变，可以通过长按方向键加速，碰壁就死，可以回头，不能吃尾巴，会加长。
+
+------------------------
+实现程序重启
+
+main.c 添加
+```
+    #include <QProcess>
+    //return a.exec();
+    int e = a.exec();
+    if(e == 888)
+    {
+        QProcess::startDetached(qApp->applicationFilePath(), QStringList());
+        return 0;
+    }
+    return e;
+```
+
+widget.c中改exit(0) 为 qApp->exit(888);
