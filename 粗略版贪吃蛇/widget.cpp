@@ -7,8 +7,11 @@ Widget::Widget(QWidget *parent) :
     ui(new Ui::Widget)
 {
     ui->setupUi(this);
+    // 生成一个食物，随机位置显示
     food_born();
+    // 把第一个食物加入snake这个QList里面
     snake.push_back(food);
+    // 再生成一个食物，随机位置显示
     food_born();
 
     wasd = Qt::Key_Down;
@@ -26,11 +29,11 @@ void Widget::keyPressEvent(QKeyEvent *e)
 {
     switch(e->key())
     {
-    case Qt::Key_Up:
-    case Qt::Key_Down:
-    case Qt::Key_Left:
-    case Qt::Key_Right:
-        wasd = e->key();
+        case Qt::Key_Up:
+        case Qt::Key_Down:
+        case Qt::Key_Left:
+        case Qt::Key_Right:
+            wasd = e->key();
     }
     slots_move();
 }
@@ -54,10 +57,10 @@ void Widget::slots_move(void)
 
     switch(wasd)
     {
-    case Qt::Key_Up:    y -= 20;    break;
-    case Qt::Key_Down:  y += 20;    break;
-    case Qt::Key_Left:  x -= 20;    break;
-    case Qt::Key_Right: x += 20;    break;
+        case Qt::Key_Up:    y -= 20;    break;
+        case Qt::Key_Down:  y += 20;    break;
+        case Qt::Key_Left:  x -= 20;    break;
+        case Qt::Key_Right: x += 20;    break;
     }
 
 
